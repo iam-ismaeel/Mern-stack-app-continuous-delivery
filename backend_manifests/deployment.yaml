@@ -11,7 +11,7 @@ spec:
   strategy:          #for updating image versions.
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 1
+      maxSurge: 0
       maxUnavailable: 25%
   selector:
     matchLabels:
