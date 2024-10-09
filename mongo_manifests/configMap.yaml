@@ -5,6 +5,6 @@ metadata:
  name: mongodb-config
  namespace: mynamespace
 data: 
- MONGO_CONN_STR: ${MONGO_CONN_STR}
- MONGO_DB_NAME: ${MONGO_DB_NAME}
+ MONGO_CONN_STR: mongodb://admin567:password567@mongodb-service:27017/mydb?directConnection=true
+ MONGO_DB_NAME:  mydb
  
