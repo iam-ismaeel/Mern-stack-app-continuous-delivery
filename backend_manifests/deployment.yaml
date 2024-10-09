@@ -47,12 +47,12 @@ spec:
           httpGet:
             path: /ok
             port: 4000
-          initialDelaySeconds: 2
-          periodSeconds: 5
+          initialDelaySeconds: 10
+          periodSeconds: 15
         readinessProbe:
           httpGet:
              path: /ok
              port: 4000
-          initialDelaySeconds: 5
-          periodSeconds: 5
+          initialDelaySeconds: 10
+          periodSeconds: 15
           successThreshold: 1
