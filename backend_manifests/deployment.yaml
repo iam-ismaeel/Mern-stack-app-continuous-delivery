@@ -34,15 +34,15 @@ spec:
           - name: MONGO_USERNAME
             valueFrom:
               secretKeyRef:
-                name: mongo-sec
+                name: mongo-secrets
                 key: username
           - name: MONGO_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: mongo-sec
+                name: mongo-secrets
                 key: password
         ports:
-        - containerPort: 8080
+        - containerPort: 4000
         livenessProbe:
           httpGet:
             path: /ok
