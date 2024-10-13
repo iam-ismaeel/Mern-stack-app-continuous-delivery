@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: ismail55/backend:v3
+        image: ismail55/backend:v4
         imagePullPolicy: Always
         env:
           - name: MONGO_CONN_STR
