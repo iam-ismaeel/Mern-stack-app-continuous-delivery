@@ -11,8 +11,8 @@ spec:
   strategy:          #for updating image versions.
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 0
-      maxUnavailable: 25%
+      maxSurge: 100%
+      maxUnavailable: 0
   selector:
     matchLabels:
       role: api
@@ -45,13 +45,13 @@ spec:
         - containerPort: 4000
         livenessProbe:
           httpGet:
-            path: /ok
+            path: /healthcheck
             port: 4000
           initialDelaySeconds: 10
           periodSeconds: 15
         readinessProbe:
           httpGet:
-             path: /ok
+             path: /ready
              port: 4000
           initialDelaySeconds: 10
           periodSeconds: 15
