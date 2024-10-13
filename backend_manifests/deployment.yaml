@@ -11,8 +11,8 @@ spec:
   strategy:          #for updating image versions.
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 100%
-      maxUnavailable: 0
+      maxSurge: 1
+      maxUnavailable: 25%
   selector:
     matchLabels:
       role: api
