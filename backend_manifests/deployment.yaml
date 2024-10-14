@@ -24,7 +24,9 @@ spec:
       containers:
       - name: api
         image: ismail55/backend:v4
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 4000
         env:
           - name: MONGO_CONN_STR
             valueFrom:
@@ -41,8 +43,7 @@ spec:
               secretKeyRef:
                 name: mongo-secrets
                 key: password
-        ports:
-        - containerPort: 4000
+      
         #livenessProbe:
          # httpGet:
           #  path: /healthcheck
