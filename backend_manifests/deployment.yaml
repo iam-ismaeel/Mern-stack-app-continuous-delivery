@@ -25,6 +25,7 @@ spec:
       - name: api
         image: ismail55/backend:v4
         imagePullPolicy: IfNotPresent
+        restartPolicy: OnFailure
         command: ["node", "server.js"]
         ports:
         - containerPort: 4000
