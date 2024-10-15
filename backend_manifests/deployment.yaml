@@ -25,6 +25,7 @@ spec:
       - name: api
         image: ismail55/backend:v4
         imagePullPolicy: IfNotPresent
+        command: ["node", "server.js"]
         ports:
         - containerPort: 4000
         env:
@@ -44,9 +45,12 @@ spec:
                 name: mongo-secrets
                 key: password
         resources:
-         limits: 
-          cpu: "200m"
-          memory: "512Mi"
+          requests: 
+            cpu: "100m"
+            memory: "256Mi"
+          limits: 
+            cpu: "500m"
+            memory: "512Mi"
         #livenessProbe:
          # httpGet:
           #  path: /healthcheck
