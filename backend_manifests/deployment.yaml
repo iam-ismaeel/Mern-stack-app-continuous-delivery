@@ -43,7 +43,10 @@ spec:
               secretKeyRef:
                 name: mongo-secrets
                 key: password
-      
+        resources:
+         limits: 
+          cpu: "200m"
+          memory: "512Mi"
         #livenessProbe:
          # httpGet:
           #  path: /healthcheck
