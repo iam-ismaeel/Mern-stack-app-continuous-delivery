@@ -51,16 +51,16 @@ spec:
           limits: 
             cpu: "500m"
             memory: "512Mi"
-        #livenessProbe:
-         # httpGet:
-          #  path: /healthcheck
-           # port: 4000
-          #initialDelaySeconds: 10
-          #periodSeconds: 15
-        #readinessProbe:
-         # httpGet:
-          #   path: /ready
-           #  port: 4000
-          #initialDelaySeconds: 10
-          #periodSeconds: 15
-          #successThreshold: 1
+        livenessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 4000
+          initialDelaySeconds: 10
+          periodSeconds: 15
+        readinessProbe:
+          httpGet:
+             path: /ready
+             port: 4000
+          initialDelaySeconds: 10
+          periodSeconds: 15
+          successThreshold: 1
