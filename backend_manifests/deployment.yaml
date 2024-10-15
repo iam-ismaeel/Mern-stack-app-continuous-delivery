@@ -55,12 +55,12 @@ spec:
           httpGet:
             path: /healthcheck
             port: 4000
-          initialDelaySeconds: 10
-          periodSeconds: 15
+          initialDelaySeconds: 20
+          periodSeconds: 30
         readinessProbe:
           httpGet:
              path: /ready
              port: 4000
-          initialDelaySeconds: 10
-          periodSeconds: 15
+          initialDelaySeconds: 20
+          periodSeconds: 30
           successThreshold: 1
