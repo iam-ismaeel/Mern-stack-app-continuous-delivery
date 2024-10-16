@@ -21,11 +21,11 @@ spec:
       labels:
         role: api
     spec:
+      restartPolicy: OnFailure
       containers:
       - name: api
         image: ismail55/backend:v4
         imagePullPolicy: IfNotPresent
-        restartPolicy: OnFailure
         ports:
         - containerPort: 4000
         env:
