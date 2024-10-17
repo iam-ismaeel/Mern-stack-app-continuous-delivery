@@ -21,7 +21,7 @@ spec:
       labels:
         role: api
     spec:
-      restartPolicy: Always
+    serviceAccountName: myserviceaccount
       containers:
       - name: api
         image: ismail55/backend:v4
