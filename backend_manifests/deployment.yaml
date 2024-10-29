@@ -21,11 +21,10 @@ spec:
       labels:
         role: api
     spec:
-    serviceAccountName: myserviceaccount
       containers:
       - name: api
-        image: ismail55/backend:v4
-        imagePullPolicy: IfNotPresent
+        image: ismail55/backend:v6
+        imagePullPolicy: Always
         ports:
         - containerPort: 4000
         env:
@@ -57,15 +56,12 @@ spec:
           httpGet:
             path: /healthcheck
             port: 4000
-          initialDelaySeconds: 120
+          initialDelaySeconds: 5
           periodSeconds: 5
-          timeoutSeconds: 5
-          failureThreshold: 10
         readinessProbe:
           httpGet:
              path: /ready
              port: 4000
-          initialDelaySeconds: 150
+          initialDelaySeconds: 10
           periodSeconds: 5
-          timeoutSeconds: 5
-          failureThreshold: 10
+          successThreshold: 2
