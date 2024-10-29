@@ -6,7 +6,10 @@ metadata:
   namespace: mynamespace
 spec:
   ports:
+    name: http
+    port: 80
   - port: 3000
+    nodePort: 30953
     protocol: TCP
   type: NodePort
   selector:
