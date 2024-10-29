@@ -23,11 +23,11 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: ismail55/frontend:v1
+        image: ismail55/frontend:v4
         imagePullPolicy: Always
         env:
           - name: REACT_APP_BACKEND_URL
-            value:     #"http://app.sandipdas.in/api/tasks" $API_ELB_PUBLIC_FQDN #add your API_Load_Balancer DNS manually here if app does not run
+            value:    "http://10.101.56.1:4000/hello" #"http://app.sandipdas.in/api/tasks" $API_ELB_PUBLIC_FQDN #add your API_Load_Balancer DNS manually here if app does not run
         ports:
         - containerPort: 3000
         # livenessProbe:
